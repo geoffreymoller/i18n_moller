@@ -65,7 +65,7 @@ module I18n
         def load_resjson(filename)
           begin
             locale = File.basename(Pathname.new(filename).basename, '.resjson')
-            y = { locale => YAML.load_file(filename) }
+            { locale => YAML.load_file(filename) }
           rescue TypeError, ScriptError, StandardError => e
             raise InvalidLocaleData.new(filename, e.inspect)
           end
