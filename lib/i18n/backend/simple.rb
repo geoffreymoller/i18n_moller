@@ -61,6 +61,16 @@ module I18n
           super
         end
 
+        # Loads a RESJSON translations file.
+        def load_resjson(filename)
+          begin
+            locale = File.basename(Pathname.new(filename).basename, '.resjson')
+            y = { locale => YAML.load_file(filename) }
+          rescue TypeError, ScriptError, StandardError => e
+            raise InvalidLocaleData.new(filename, e.inspect)
+          end
+        end
+
         def eager_load!
           init_translations unless initialized?
           super

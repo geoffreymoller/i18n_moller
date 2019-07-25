@@ -4,9 +4,9 @@ class I18nLoadPathTest < I18n::TestCase
   def setup
     super
     # TODO - why are these here if the test works without them?
-    # I18n.locale = :en
-    # I18n.backend = I18n::Backend::Simple.new
-    # store_translations(:en, :foo => {:bar => 'bar', :baz => 'baz'})
+    I18n.locale = :en
+    I18n.backend = I18n::Backend::Simple.new
+    store_translations(:en, :foo => {:bar => 'bar', :baz => 'baz'})
   end
 
   test "nested load paths do not break locale loading" do
@@ -21,7 +21,7 @@ class I18nLoadPathTest < I18n::TestCase
 
   test "load resjson" do
     I18n.load_path = [[locales_dir + '/en.resjson']]
-    assert_equal "baz", I18n.t(:'foo.bar')
+    assert_equal "made", I18n.t(:'love')
   end
 
   test "loading an empty yml file raises an InvalidLocaleData exception" do
