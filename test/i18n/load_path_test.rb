@@ -24,6 +24,17 @@ class I18nLoadPathTest < I18n::TestCase
     assert_equal "made", I18n.t(:'love')
   end
 
+  test "load resjson pipes" do
+    I18n.load_path = [[locales_dir + '/en.resjson']]
+    assert_equal "honey", I18n.t(:'love|jarz|one')
+    assert_equal "honey", I18n.t(:'love|jarz|two')
+  end
+
+  test "load resjson hierarchy" do
+    I18n.load_path = [[locales_dir + '/en.resjson']]
+    assert_equal "baz", I18n.t(:'foo.bar')
+  end
+
   test "loading an empty yml file raises an InvalidLocaleData exception" do
     assert_raise I18n::InvalidLocaleData do
       I18n.load_path = [[locales_dir + '/invalid/empty.yml']]

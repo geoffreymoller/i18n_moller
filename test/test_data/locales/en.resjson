@@ -1,4 +1,9 @@
 {
   "love" : "made",
-  "_love.comment" : "the explanation"
+  "_love.comment" : "the explanation",
+  "love|jarz|one" : "honey",
+  "love|jarz|two" : "honey",
+  "foo": {
+    "bar": "baz"
+  }
 }
