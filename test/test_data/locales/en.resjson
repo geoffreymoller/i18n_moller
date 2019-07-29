@@ -4,6 +4,7 @@
   "love|jarz|one" : "honey",
   "love|jarz|two" : "honey",
   "foo": {
-    "bar": "baz"
+    "bar": "baz",
+    "_bar.comment" : "bar is bar"
   }
 }
