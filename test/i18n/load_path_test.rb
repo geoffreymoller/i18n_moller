@@ -21,13 +21,7 @@ class I18nLoadPathTest < I18n::TestCase
 
   test "load resjson" do
     I18n.load_path = [[locales_dir + '/en.resjson']]
-    assert_equal "made", I18n.t(:'love')
-  end
-
-  test "load resjson pipes" do
-    I18n.load_path = [[locales_dir + '/en.resjson']]
-    assert_equal "honey", I18n.t(:'love|jarz|one')
-    assert_equal "honey", I18n.t(:'love|jarz|two')
+    assert_equal "more than zero", I18n.t(:'one')
   end
 
   test "load resjson hierarchy" do

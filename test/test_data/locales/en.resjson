@@ -1,8 +1,6 @@
 {
-  "love" : "made",
-  "_love.comment" : "the explanation",
-  "love|jarz|one" : "honey",
-  "love|jarz|two" : "honey",
+  "one" : "more than zero",
+  "_one.comment" : "the explanation",
   "foo": {
     "bar": "baz",
     "_bar.comment" : "bar is bar"
