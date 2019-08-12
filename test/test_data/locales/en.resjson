@@ -1,8 +1,11 @@
 {
-  "one" : "more than zero",
-  "_one.comment" : "the explanation",
-  "foo": {
-    "bar": "baz",
-    "_bar.comment" : "bar is bar"
-  }
+    "all_company": "AC",
+    "_all_company.comment": "# Comment here",
+    "default_message_subject": "Hello %{first_name}!",
+    "message_signature_html": "Thank you,<br/>The Yammer Team",
+    "_message_signature_html.comment": "# {StrContains=\"<br/>\"}",
+    "num_others.zero": "%{count} others",
+    "_num_others.zero.comment": "# other comment",
+    "vader.luke.rey": "this is the last jedi's value",
+    "_vader.luke.rey.comment": "#rey's comment is \"quoted\" and 'single-quoted'"
 }
