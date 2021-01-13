@@ -75,9 +75,19 @@ class I18nBackendSimpleTest < I18n::TestCase
     assert_equal({ 'en' => { 'foo' => { 'bar' => 'baz' } } }, data)
   end
 
-  test "simple load_json: loads data from a JSON file" do
-    data = I18n.backend.send(:load_yml, "#{locales_dir}/en.json")
-    assert_equal({ 'en' => { 'foo' => { 'bar' => 'baz' } } }, data)
+  test "simple load_json: loads data from a RESJSON file" do
+    data = I18n.backend.send(:load_resjson, "#{locales_dir}/en.resjson")
+    assert_equal({'en' => {
+        "all_company" => "AC",
+        "default_message_subject" => "Hello %{first_name}!",
+        "message_signature_html" => "Thank you,<br/>The Yammer Team",
+        "num_others.zero" => "%{count} others",
+        "vader" => {
+          "luke" => {
+              "rey" => "this is the last jedi's value"
+          }
+        }
+    }}, data)
   end
 
   test "simple load_translations: loads data from known file formats" do
